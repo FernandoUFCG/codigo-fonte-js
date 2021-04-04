@@ -31,7 +31,7 @@ const REPLACEMENT_TYPES = {
 };
 /* eslint-enable camelcase */
 
-class APIPlugin {
+class APIPlugin_new {
 	apply(compiler) {
 		compiler.hooks.compilation.tap(
 			"APIPlugin",
@@ -81,4 +81,4 @@ class APIPlugin {
 	}
 }
 
-module.exports = APIPlugin;
+module.exports = APIPlugin_new;

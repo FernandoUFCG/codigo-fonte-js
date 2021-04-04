@@ -6,7 +6,7 @@
 
 const asyncLib = require("neo-async");
 
-class CachePlugin {
+class CachePlugin_new {
 	constructor(cache) {
 		this.cache = cache || {};
 		this.FS_ACCURACY = 2000;
@@ -15,7 +15,7 @@ class CachePlugin {
 	apply(compiler) {
 		if (Array.isArray(compiler.compilers)) {
 			compiler.compilers.forEach((c, idx) => {
-				new CachePlugin((this.cache[idx] = this.cache[idx] || {})).apply(c);
+				new CachePlugin_new((this.cache[idx] = this.cache[idx] || {})).apply(c);
 			});
 		} else {
 			const registerCacheToCompiler = (compiler, cache) => {
@@ -99,4 +99,4 @@ class CachePlugin {
 			this.FS_ACCURACY = 1000;
 	}
 }
-module.exports = CachePlugin;
+module.exports = CachePlugin_new;

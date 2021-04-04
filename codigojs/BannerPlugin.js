@@ -22,7 +22,7 @@ const wrapComment = str => {
 		.join("\n * ")}\n */`;
 };
 
-class BannerPlugin {
+class BannerPlugin_new {
 	constructor(options) {
 		if (arguments.length > 1) {
 			throw new Error(
@@ -114,4 +114,4 @@ class BannerPlugin {
 	}
 }
 
-module.exports = BannerPlugin;
+module.exports = BannerPlugin_new;

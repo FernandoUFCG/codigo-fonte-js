@@ -30,7 +30,7 @@ const ERR_CHUNK_INITIAL =
 
 /** @typedef {(a: Module, b: Module) => -1|0|1} ModuleSortPredicate */
 /** @typedef {(m: Module) => boolean} ModuleFilterPredicate */
-/** @typedef {(c: Chunk) => boolean} ChunkFilterPredicate */
+/** @typedef {(c: Chunk_new) => boolean} ChunkFilterPredicate */
 
 /**
  * @param {WithId} a object that contains an ID property
@@ -91,7 +91,7 @@ const getModulesSize = set => {
  * A Chunk is a unit of encapsulation for Modules.
  * Chunks are "rendered" into bundles that get emitted when the build completes.
  */
-class Chunk {
+class Chunk_new {
 	/**
 	 * @param {string=} name of chunk being created, is optional (for subclasses)
 	 */
@@ -293,7 +293,7 @@ class Chunk {
 	}
 
 	/**
-	 * @param {Chunk} otherChunk the chunk to compare itself with
+	 * @param {Chunk_new} otherChunk the chunk to compare itself with
 	 * @returns {-1|0|1} this is a comparitor function like sort and returns -1, 0, or 1 based on sort order
 	 */
 	compareTo(otherChunk) {
@@ -345,7 +345,7 @@ class Chunk {
 	/**
 	 *
 	 * @param {Module} module module to move
-	 * @param {Chunk} otherChunk other chunk to move it to
+	 * @param {Chunk_new} otherChunk other chunk to move it to
 	 * @returns {void}
 	 */
 	moveModule(module, otherChunk) {
@@ -356,7 +356,7 @@ class Chunk {
 
 	/**
 	 *
-	 * @param {Chunk} otherChunk the chunk to integrate with
+	 * @param {Chunk_new} otherChunk the chunk to integrate with
 	 * @param {ModuleReason} reason reason why the module is being integrated
 	 * @returns {boolean} returns true or false if integration succeeds or fails
 	 */
@@ -392,7 +392,7 @@ class Chunk {
 	}
 
 	/**
-	 * @param {Chunk} newChunk the new chunk that will be split out of, and then chunk raphi twil=
+	 * @param {Chunk_new} newChunk the new chunk that will be split out of, and then chunk raphi twil=
 	 * @returns {void}
 	 */
 	split(newChunk) {
@@ -695,7 +695,7 @@ class Chunk {
 }
 
 // TODO remove in webpack 5
-Object.defineProperty(Chunk.prototype, "forEachModule", {
+Object.defineProperty(Chunk_new.prototype, "forEachModule", {
 	configurable: false,
 	value: util.deprecate(function(fn) {
 		this._modules.forEach(fn);
@@ -703,7 +703,7 @@ Object.defineProperty(Chunk.prototype, "forEachModule", {
 });
 
 // TODO remove in webpack 5
-Object.defineProperty(Chunk.prototype, "mapModules", {
+Object.defineProperty(Chunk_new.prototype, "mapModules", {
 	configurable: false,
 	value: util.deprecate(function(fn) {
 		return Array.from(this._modules, fn);
@@ -711,7 +711,7 @@ Object.defineProperty(Chunk.prototype, "mapModules", {
 });
 
 // TODO remove in webpack 5
-Object.defineProperty(Chunk.prototype, "chunks", {
+Object.defineProperty(Chunk_new.prototype, "chunks", {
 	configurable: false,
 	get() {
 		throw new Error("Chunk.chunks: Use ChunkGroup.getChildren() instead");
@@ -722,7 +722,7 @@ Object.defineProperty(Chunk.prototype, "chunks", {
 });
 
 // TODO remove in webpack 5
-Object.defineProperty(Chunk.prototype, "parents", {
+Object.defineProperty(Chunk_new.prototype, "parents", {
 	configurable: false,
 	get() {
 		throw new Error("Chunk.parents: Use ChunkGroup.getParents() instead");
@@ -733,7 +733,7 @@ Object.defineProperty(Chunk.prototype, "parents", {
 });
 
 // TODO remove in webpack 5
-Object.defineProperty(Chunk.prototype, "blocks", {
+Object.defineProperty(Chunk_new.prototype, "blocks", {
 	configurable: false,
 	get() {
 		throw new Error("Chunk.blocks: Use ChunkGroup.getBlocks() instead");
@@ -744,7 +744,7 @@ Object.defineProperty(Chunk.prototype, "blocks", {
 });
 
 // TODO remove in webpack 5
-Object.defineProperty(Chunk.prototype, "entrypoints", {
+Object.defineProperty(Chunk_new.prototype, "entrypoints", {
 	configurable: false,
 	get() {
 		throw new Error(
@@ -756,4 +756,4 @@ Object.defineProperty(Chunk.prototype, "entrypoints", {
 	}
 });
 
-module.exports = Chunk;
+module.exports = Chunk_new;

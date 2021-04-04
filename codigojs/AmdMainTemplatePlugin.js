@@ -10,7 +10,7 @@ const Template = require("./Template");
 
 /** @typedef {import("./Compilation")} Compilation */
 
-class AmdMainTemplatePlugin {
+class AmdMainTemplatePlugin_new {
 	/**
 	 * @param {string} name the library name
 	 */
@@ -84,4 +84,4 @@ class AmdMainTemplatePlugin {
 	}
 }
 
-module.exports = AmdMainTemplatePlugin;
+module.exports = AmdMainTemplatePlugin_new;

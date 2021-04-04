@@ -49,7 +49,7 @@ const sortOrigin = (a, b) => {
 	return compareLocations(a.loc, b.loc);
 };
 
-class ChunkGroup {
+class ChunkGroup_new {
 	/**
 	 * Creates an instance of ChunkGroup.
 	 * @param {ChunkGroupOptions=} options chunk group options passed to chunkGroup
@@ -393,7 +393,7 @@ class ChunkGroup {
 	 * Sorting predicate which allows current ChunkGroup to be compared against another.
 	 * Sorting values are based off of number of chunks in ChunkGroup.
 	 *
-	 * @param {ChunkGroup} otherGroup the chunkGroup to compare this against
+	 * @param {ChunkGroup_new} otherGroup the chunkGroup to compare this against
 	 * @returns {-1|0|1} sort position for comparison
 	 */
 	compareTo(otherGroup) {
@@ -470,4 +470,4 @@ class ChunkGroup {
 	}
 }
 
-module.exports = ChunkGroup;
+module.exports = ChunkGroup_new;

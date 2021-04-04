@@ -8,7 +8,7 @@ const asyncLib = require("neo-async");
 const PrefetchDependency = require("./dependencies/PrefetchDependency");
 const NormalModule = require("./NormalModule");
 
-class AutomaticPrefetchPlugin {
+class AutomaticPrefetchPlugin_new {
 	apply(compiler) {
 		compiler.hooks.compilation.tap(
 			"AutomaticPrefetchPlugin",
@@ -47,4 +47,4 @@ class AutomaticPrefetchPlugin {
 		);
 	}
 }
-module.exports = AutomaticPrefetchPlugin;
+module.exports = AutomaticPrefetchPlugin_new;

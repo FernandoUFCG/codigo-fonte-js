@@ -8,7 +8,7 @@ const WebpackError = require("./WebpackError");
 
 /** @typedef {import("./Module")} Module */
 
-class AsyncDependencyToInitialChunkError extends WebpackError {
+class AsyncDependencyToInitialChunkError_new extends WebpackError {
 	/**
 	 * Creates an instance of AsyncDependencyToInitialChunkError.
 	 * @param {string} chunkName Name of Chunk
@@ -28,4 +28,4 @@ class AsyncDependencyToInitialChunkError extends WebpackError {
 	}
 }
 
-module.exports = AsyncDependencyToInitialChunkError;
+module.exports = AsyncDependencyToInitialChunkError_new;

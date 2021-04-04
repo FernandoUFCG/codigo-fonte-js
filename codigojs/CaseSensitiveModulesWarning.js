@@ -44,7 +44,7 @@ const createModulesListMessage = modules => {
 		.join("\n");
 };
 
-class CaseSensitiveModulesWarning extends WebpackError {
+class CaseSensitiveModulesWarning_new extends WebpackError {
 	/**
 	 * Creates an instance of CaseSensitiveModulesWarning.
 	 * @param {Module[]} modules modules that were detected
@@ -64,4 +64,4 @@ ${modulesList}`);
 	}
 }
 
-module.exports = CaseSensitiveModulesWarning;
+module.exports = CaseSensitiveModulesWarning_new;

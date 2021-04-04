@@ -18,7 +18,7 @@ const TypeIdentifier = 9;
 const TypeWrapped = 10;
 const TypeTemplateString = 11;
 
-class BasicEvaluatedExpression {
+class BasicEvaluatedExpression_new {
 	constructor() {
 		this.type = TypeUnknown;
 		this.range = null;
@@ -208,4 +208,4 @@ class BasicEvaluatedExpression {
 	}
 }
 
-module.exports = BasicEvaluatedExpression;
+module.exports = BasicEvaluatedExpression_new;
